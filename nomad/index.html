@@ -180,7 +180,10 @@
                     <source src="./static/videos/nomad_teaser.mp4" type="video/mp4">
                 </video>
                 <p>
-                    NoMaD is a novel architecture for robotic navigation in previously unseen environments that uses a unified diffusion policy to jointly represent exploratory task-agnostic behavior and goal-directed task-specific behavior. NoMaD provides high capacity (both for modeling perception and control) and the ability to represent complex, multimodal distributions.
+                    NoMaD is a novel architecture for robotic navigation in previously unseen environments that uses a
+                    unified diffusion policy to jointly represent exploratory task-agnostic behavior and goal-directed
+                    task-specific behavior. NoMaD provides high capacity (both for modeling perception and control) and
+                    the ability to represent complex, multimodal distributions.
                 </p>
             </div>
         </div>
@@ -219,10 +222,25 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Robotic learning for navigation in unfamiliar environments needs to provide policies for both task-oriented navigation (i.e., reaching a goal that the robot has located), and task-agnostic exploration (i.e., searching for a goal in a novel setting). Typically, these roles are handled by separate models, for example by using subgoal proposals, planning, or separate navigation strategies. In this paper, we describe how we can train a single unified diffusion policy to handle both goal-directed navigation and goal-agnostic exploration, with the latter providing the ability to search novel environments, and the former providing the ability to reach a user-specified goal once it has been located. We show that this unified policy results in better overall performance when navigating to visually indicated goals in novel environments, as compared to approaches that use subgoal proposals from generative models, or prior methods based on latent variable models. 
+                            Robotic learning for navigation in unfamiliar environments needs to provide policies for
+                            both task-oriented navigation (i.e., reaching a goal that the robot has located), and
+                            task-agnostic exploration (i.e., searching for a goal in a novel setting). Typically, these
+                            roles are handled by separate models, for example by using subgoal proposals, planning, or
+                            separate navigation strategies. In this paper, we describe how we can train a single unified
+                            diffusion policy to handle both goal-directed navigation and goal-agnostic exploration, with
+                            the latter providing the ability to search novel environments, and the former providing the
+                            ability to reach a user-specified goal once it has been located. We show that this unified
+                            policy results in better overall performance when navigating to visually indicated goals in
+                            novel environments, as compared to approaches that use subgoal proposals from generative
+                            models, or prior methods based on latent variable models.
                         </p>
                         <p>
-                            We instantiate our method by using a large-scale Transformer-based policy trained on data from multiple ground robots, with a diffusion model decoder to flexibly handle both goal-conditioned and goal-agnostic navigation. Our experiments, conducted on a real-world mobile robot platform, show effective navigation in unseen environments in comparison with five alternative methods, and demonstrate significant improvements in performance and lower collision rates, despite utilizing smaller models than state-of-the-art approaches.
+                            We instantiate our method by using a large-scale Transformer-based policy trained on data
+                            from multiple ground robots, with a diffusion model decoder to flexibly handle both
+                            goal-conditioned and goal-agnostic navigation. Our experiments, conducted on a real-world
+                            mobile robot platform, show effective navigation in unseen environments in comparison with
+                            five alternative methods, and demonstrate significant improvements in performance and lower
+                            collision rates, despite utilizing smaller models than state-of-the-art approaches.
                         </p>
                     </div>
                 </div>
@@ -253,11 +271,14 @@
                     <h2 class="title is-3">NoMaD Architecture</h2>
                     <div class="content has-text-justified">
                         <p>
-                            NoMaD uses the ViNT model to encode a context vector from observations and a goal image, if performing goal-directed navigation. The context vector is then used to condition a diffusion model to generate a distribution of actions.
+                            NoMaD uses the ViNT model to encode a context vector from observations and a goal image, if
+                            performing goal-directed navigation. The context vector is then used to condition a
+                            diffusion model to generate a distribution of actions.
                         </p>
-                        <figure id="architecture">
-                            <img src="./static/images/nomad_architecture.png" alt="NoMaD architecture" />
-                        </figure>
+                        <video id="teaser" disableRemotePlayback autoplay muted loop playsinline fetchpriority="high"
+                            poster="./static/images/nomad_architecture.jpeg">
+                            <source src="./static/videos/nomad_explainer.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
 
@@ -279,9 +300,13 @@
                 <h2 class="title is-3">NoMaD Indoors</h2>
                 <div class="content has-text-justified">
                     <p>
-                        NoMaD employs ViNT for encoding the context vector used to condition the diffusion process. This means it can explore <i>previously unseen</i> environments by employing a topological graph-based
+                        NoMaD employs ViNT for encoding the context vector used to condition the diffusion process. This
+                        means it can explore <i>previously unseen</i> environments by employing a topological
+                        graph-based
                         global
-                        planner. We show NoMaD exploring a previously unseen office environment, and reaching a goal. In this environment, NoMaD demonstrates the emergent capability to avoid walls and obstacles and produce multi-modal action distributions. 
+                        planner. We show NoMaD exploring a previously unseen office environment, and reaching a goal. In
+                        this environment, NoMaD demonstrates the emergent capability to avoid walls and obstacles and
+                        produce multi-modal action distributions.
                     </p>
                     <!-- <div class="videos-flex"> -->
                     <center>
@@ -302,7 +327,11 @@
             <br>
             <div class="content has-text-justified">
                 <p>
-                    Beyond the structure of indoor environments, NoMaD is also capable of long horizon exploration and navigation in outdoor environments. We show NoMaD exploring a previously unseen outdoor environment, and reaching a goal. In this environment, NoMaD demonstrates the same capabilities as in the indoor environment while also sticking to sidewalks and avoiding roads as a result of implicit navigation preferences included in the dataset. 
+                    Beyond the structure of indoor environments, NoMaD is also capable of long horizon exploration and
+                    navigation in outdoor environments. We show NoMaD exploring a previously unseen outdoor environment,
+                    and reaching a goal. In this environment, NoMaD demonstrates the same capabilities as in the indoor
+                    environment while also sticking to sidewalks and avoiding roads as a result of implicit navigation
+                    preferences included in the dataset.
                 </p>
                 <!-- <div class="videos-flex"> -->
                 <center>
@@ -323,7 +352,11 @@
             <br>
             <div class="content has-text-justified">
                 <p>
-                    We compared NoMaD against other state-of-the-art methods, including ViNT with image diffusion subgoals, autoregressive action generation, and VIB (Variational Information Bottleneck). We found that NoMaD outperforms all of these methods by reaching long-horizon goals with fewer to no collisions. The ability of NoMaD to represent multi-modal action distributions around obstacles allows it to avoid collisions and reach goals more effectively than other methods.
+                    We compared NoMaD against other state-of-the-art methods, including ViNT with image diffusion
+                    subgoals, autoregressive action generation, and VIB (Variational Information Bottleneck). We found
+                    that NoMaD outperforms all of these methods by reaching long-horizon goals with fewer to no
+                    collisions. The ability of NoMaD to represent multi-modal action distributions around obstacles
+                    allows it to avoid collisions and reach goals more effectively than other methods.
                 </p>
                 <!-- <div class="videos-flex"> -->
                 <center>
@@ -432,24 +465,24 @@
         </div> -->
 
 
-        <section class="section" id="BibTeX">
-            <div class="container is-max-desktop content">
-                <h2 class="title">BibTeX</h2>
-                <pre><code>@article{sridhar2023nomad,
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{sridhar2023nomad,
                     author  = {Ajay Sridhar and Dhruv Shah and Catherine Glossop and Sergey Levine},
                     title   = {{NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration}},
                     journal = {arXiv pre-print},
                     year    = {2023},
                     url     = {https://arxiv.org/abs/2310.xxxx}
                   }</code></pre>
-            </div>
-        </section>
-        <br>
-        <center class="is-size-10">
-            The website design was adapted from <a href="https://nerfies.github.io" class="external-link"><span
-                    class="dnerf">Nerfies</span></a>.
-        </center>
-        <br>
+        </div>
+    </section>
+    <br>
+    <center class="is-size-10">
+        The website design was adapted from <a href="https://nerfies.github.io" class="external-link"><span
+                class="dnerf">Nerfies</span></a>.
+    </center>
+    <br>
 </body>
 
 </html>
