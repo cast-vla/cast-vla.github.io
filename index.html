@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="description"
-        content="A family of general navigation models that generalize across environments and robots, and can be readily adapted to downstream tasks.">
-    <meta name="keywords" content="GNM, ViNT, NoMaD, robotics, foundation model">
+        content="CAST (Counterfactual Augmentation with Synthetic Trajectories) is a method for augmenting uncurated robot datasets with counterfactual trajectories to improve their ability to be steered by language instructions.">
+    <meta name="keywords" content="CAST, cast, language, robotics, navigation, counterfactuals">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>General Navigation Models</title>
 
@@ -15,7 +15,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-ZYH3N96LN5');
     </script>
 
@@ -37,7 +36,7 @@
 
 <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
@@ -95,7 +94,7 @@
             </div>
 
         </div>
-    </nav>
+    </nav> -->
 
 
     <section class="hero">
@@ -103,32 +102,15 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-2 publication-title">General Navigation Models</h1>
+                        <h1 class="title is-2 publication-title">Counterfactual Labels Improve Instruction
+                            Following in Vision-Language-Action Models</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="https://cs.berkeley.edu/~shah">Dhruv Shah</a>,</span>
+                                <a href="https://catglossop.github.io">Catherine Glossop</a>,</span>
                             <span class="author-block">
-                                <a href="http://ajaysridhar.com/">Ajay Sridhar</a>,</span>
+                                <a href="https://scholar.google.com/citations?user=AGPooMYAAAAJ&hl=en">Arjun Bhorkar</a>,</span>
                             <span class="author-block">
-                                <a href="https://dashora7.github.io">Nitish Dashora</a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="">Catherine Glossop</a>,
-                            </span><br>
-                            <span class="author-block">
-                                <a href="https://kylesta.ch">Kyle Stachowicz</a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="">Arjun Bhorkar</a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://kevin.black">Kevin Black</a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://sites.google.com/view/noriaki-hirose/">Noriaki Hirose</a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://cs.berkeley.edu/~svlevine">Sergey Levine</a>
+                                <a href="https://robodhruv.github.io/">Dhruv Shah</a>,
                             </span>
                         </div>
 
@@ -136,17 +118,17 @@
                             <div class="publication-links">
                                 <!-- Talk Link. -->
                                 <span class="link-block">
-                                    <a href="https://youtu.be/Bf30cs5MU1I"
+                                    <a href=""
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-youtube"></i>
                                         </span>
-                                        <span>Talk</span>
+                                        <span>Video</span>
                                     </a>
                                 </span>
                                 <!-- Code Link. -->
                                 <span class="link-block">
-                                    <a href="https://github.com/robodhruv/visualnav-transformer"
+                                    <a href=""
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-github-alt"></i>
@@ -156,7 +138,7 @@
                                 </span>
                                 <!-- Dataset Link. -->
                                 <span class="link-block">
-                                    <a href="https://github.com/robodhruv/visualnav-transformer#data-wrangling"
+                                    <a href=""
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-database"></i> </span>
@@ -166,7 +148,7 @@
 
                                 <!-- BibTex -->
                                 <span class="link-block">
-                                    <a href="./static/gnm.bib"
+                                    <a href=""
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-quote-left"></i> </span>
@@ -187,8 +169,8 @@
         <div class="container is-max-desktop is-centered has-text-justified is-size-5">
             <div class="hero-body">
                 <video id="teaser" disableRemotePlayback autoplay muted loop playsinline fetchpriority="high"
-                    poster="./static/images/teaser_new.jpeg">
-                    <source src="./static/videos/teaser_new.mp4" type="video/mp4">
+                    poster="./static/images/teaser.jpeg">
+                    <source src="./static/videos/teaser.mp4" type="video/mp4">
                 </video>
                 <p>
                     General Navigation Models are general-purpose goal-conditioned visual navigation policies trained on
@@ -590,13 +572,13 @@
 
 
     <!-- People using GNM -->
-    <section class="hero is-light is-small">
+    <!-- <section class="hero is-light is-small">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
                         <h2 class="title is-3">General Navigation Models <i>in-the-wild</i></h2>
-                        <!-- align text left -->
+                        align text left
                     </div>
                 </div>
                 <section class="section">
@@ -700,12 +682,24 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{glossop2025cast,
+                    author  = {Catherine Glossop and Arjun Bhorkar and Dhruv Shah and Sergey Levine},
+                    title   = {{Counterfactual Labels Improve Instruction Following in Vision-Language-Action Models}},
+                    journal = {arXiv pre-print},
+                    year    = {2023},
+                    url     = {https://arxiv.org/abs/2310.07896}
+                  }</code></pre>
+        </div>
+    </section>
 
     <br>
     <center class="is-size-10">
-      The website (<a href="https://github.com/general-navigation-models/general-navigation-models.github.io">source code</a>) design was adapted from <a href="https://nerfies.github.io" class="external-link"><span
+      The website (<a href="https://github.com/catglossop/counterfactual-augmentation-w-synthetic-trajectories">source code</a>) design was adapted from <a href="https://nerfies.github.io" class="external-link"><span
                 class="dnerf">Nerfies</span></a>.
     </center>
     <br>
