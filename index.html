@@ -46,7 +46,7 @@
                             <span class="author-block">
                                 <a href="https://catglossop.github.io">Catherine Glossop</a>,</span>
                             <span class="author-block">
-                                <a href="https://catglossop.github.io">William Chen</a>,</span>
+                                <a href="https://x.com/verityw_">William Chen</a>,</span>
                             <span class="author-block">
                                 <a href="https://scholar.google.com/citations?user=AGPooMYAAAAJ&hl=en">Arjun Bhorkar</a>,</span>
                             <span class="author-block">
@@ -61,7 +61,7 @@
                             <div class="publication-links">
                                 <!-- Talk Link. -->
                                 <span class="link-block">
-                                    <a href=""
+                                    <a href="TODO"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-youtube"></i>
@@ -71,7 +71,7 @@
                                 </span>
                                 <!-- Code Link. -->
                                 <span class="link-block">
-                                    <a href=""
+                                    <a href="https://github.com/catglossop/CAST"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-github-alt"></i>
@@ -81,7 +81,7 @@
                                 </span>
                                 <!-- Dataset Link. -->
                                 <span class="link-block">
-                                    <a href=""
+                                    <a href="TODO"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-database"></i>
@@ -91,7 +91,7 @@
                                 </span>
                                 <!-- ArXiV Link -->
                                 <span class="link-block">
-                                    <a href=""
+                                    <a href="TODO"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-file"></i> 
@@ -112,28 +112,51 @@
     <section class="hero teaser">
         <div class="container is-max-desktop is-centered has-text-justified is-size-5">
             <div class="hero-body">
-                <video id="teaser" disableRemotePlayback autoplay muted loop playsinline fetchpriority="high"
-                    poster="./static/images/teaser.jpeg">
-                    <source src="./static/videos/teaser.mp4" type="video/mp4">
-                </video>
+                <center><video width="640" height="480" id="teaser" autoplay muted loop playsinline fetchpriority="high">
+                    <source src="./static/videos/cast_teaser_32.mp4" type="video/mp4">
+                </video></center>
+                <center><h2 class="title" style="margin-bottom: 20px">Abstract</h2></center>
+                <p> </p>
                 <p>
-                    General Navigation Models are general-purpose goal-conditioned visual navigation policies trained on
-                    diverse, cross-embodiment training data, and can control many different robots in zero-shot. They
-                    can also be efficiently fine-tuned, or <i>adapted</i>, to new robots and downstream tasks.
+                    Generalist robots should be able to understand and follow user instructions, but current vision-language-action (VLA) models struggle with following fine-grained commands despite providing a powerful architecture for mapping open-vocabulary natural language instructions to robot actions. We attribute this phenomenon to a lack of semantic diversity and language grounding in existing robot datasets and, specifically, a lack of fine-grained <i>task</i> diversity for similar observations. To address this, we present a novel method to <i>augment</i> existing robot datasets by leveraging vision language models to create <i>counterfactual</i> labels. Our method improves the language-following capabilities of VLAs by increasing the diversity and granularity of language grounding for robot datasets by generating counterfactual language and actions.
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- Approach -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <center><h1 class="title" style="margin-bottom: 20px">Approach</h1></center>
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+                <h2 class="subtitle"><b>Counterfactual Augmentation with Synthetic Trajectories (CAST)</b></h2>
+                <p class="body">We propose CAST, <b>C</b>ounterfactual <b>A</b>ugmentation with <b>S</b>ynthetic <b>T</b>rajectories, a method for both expanding and balancing the distribution of trajectories in your robotics dataset.</p>
+            </div>
+        </div>
+        <center><img width=640 height=480 src="./static/images/cast_teaser_image.png" alt="CAST Method" class="cast-diagram"></center>
+        <div class="hero-body">
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+                <p>We observed that often VLA policies will learn to ignore language, especially when training on sufficiently diverse language instructions, as biases in the data result in the policy only needing to pay attention to the observation to predict the correct actions during training. Therefore, the goal of CAST is to expand the distribution of instructions and actions at any given observation. We show that this forces the model to attend to language, producing a more steerable policy.</p>
+            </div>
+        </div>
+        <center><video width="640" id="teaser" autoplay muted loop playsinline fetchpriority="high" controls>
+            <source src="./static/videos/cast_method_overview_32.mp4" type="video/mp4">
+        </video></center>
+        <div class="hero-body">    
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+                <p>CAST takes an uncurated robot dataset queries a VLM for counterfactual instructions that could have been executed at different points in the existing trajectories. The atomic command that aligns with the instruction is also determined and used to generate an action chunk. We can then append these counterfactual actions to the existing trajectory, creating the CAST dataset, which consists of both the original data and these counterfactual trajectory-instruction pairs. We use the CAST dataset to finetune PaliGemma-3B with the typical VLA recipe.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Results Carousel -->
-
     <section class="hero is-light is-small">
-
+        <center><h1 class="title" style="text-align: center; margin: bottom 20px;">Experiments</h1></center>
         <!-- Object Navigation -->
         <div class="hero-body">
-            <h2 class="title">Object Navigation</h2>
-            <div class="container">
-
+            <h2 class="subtitle" style="text-align: center; margin: bottom 20px;">Object Navigation</h2>
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+            
                 <p class="body">In object navigation tasks, the policy must recognize and move towards a target object. CAST increases the coverage of object reaching behavior in the general navigation dataset we train CounterfactualVLA on, resulting in successful object navigation.</p>
                 <div id="results-carousel" class="carousel results-carousel">
                     <div class="item item-cone">
@@ -157,8 +180,10 @@
 
         <!-- Referential Navigation -->
         <div class="hero-body">
-            <h2 class="title">Referential Navigation</h2>
-            <p class="subtitle">In referential navigation tasks, the policy must recognize a target object or structure in the scene and understand how to move with reference to that object, specifically moving to the "right" or "left". </p>
+            <h2 class="subtitle" style="text-align: center; margin: bottom 20px;">Referential Navigation</h2>
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+            
+            <p class="body">In referential navigation tasks, the policy must recognize a target object or structure in the scene and understand how to move with reference to that object, specifically moving to the "right" or "left". By explicitly generating counterfactual trajectories that reflect these referential instructions, CounterfactualVLA learns to differentiate these behaviors and perform them accordingly </p>
             <div class="container">
                 <div id="results-carousel" class="carousel results-carousel">
                     <div class="item item-cone">
@@ -188,8 +213,9 @@
 
         <!-- Continuous Navigation -->
         <div class="hero-body">
-            <h2 class="title">Continuous Navigation</h2>
-            <p class="subtitle">In continuous navigation tasks, the policy must recognize a target structure and move with respect to the structure for a sustained amount of time.</p>
+            <h2 class="subtitle" style="text-align: center; margin: bottom 20px;">Continuous Navigation</h2>
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+            <p class="body">In continuous navigation tasks, the policy must recognize a target structure and move with respect to the structure for a sustained amount of time. CouterfactualVLA demonstrates the ability to perform these continuous behaviors in scenes where the training data is typically biased to moving down the center of hallways or sticking to more open areas </p>
             <div class="container">
                 <div id="results-carousel" class="carousel results-carousel">
                     <div class="item item-cone">
@@ -210,6 +236,44 @@
                 </div>
             </div>
         </div>
+
+        <!-- Chained Instruction Videos -->
+        <div class="hero-body">
+            <h2 class="subtitle" style="text-align: center; margin: bottom 20px;">Chained Instructions</h2>
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+            <p class="body">In these examples, the policy is provided instructions in sequence. It must execute each step correctly to move on to the next step.</p>
+            <div class="container">
+                <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item item-cone">
+                        <video poster="" id="cone" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/cast_chain_indoor_w_speed_32.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-stairs">
+                        <video poster="" id="stairs" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/cast_chain_outside_w_speed_32.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <center><h1 class="title" style="margin-bottom: 20px">Results</h1></center>
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+                <p class="body">By training CounterfactualVLA with the CAST dataset, we can match and outperform state-of-the-art methods for open-set language following.</p>
+            </div>
+        </div>
+        <center><img width=800 src="./static/images/results_w_standard.png" alt="CAST Method" class="cast-diagram"></center>
+        <div class="hero-body">
+            <div class="container is-max-desktop is-centered has-text-justified is-size-6">
+                <p class="body">We also compare to alternative architectures, which demonstrates that having a high-capacity model in necessary to fully reap the benefits of diverse language labels.</p>
+            </div>
+        </div>
+        <center><img width=480 src="./static/images/results_architectures.png" alt="CAST Method" class="cast-diagram"></center>
     </section>
 
 
