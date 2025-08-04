@@ -35,68 +35,6 @@
 </head>
 
 <body>
-
-    <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-        <div class="navbar-menu">
-            <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-                <a class="navbar-item" href="https://cs.berkeley.edu/~shah">
-                    <span class="icon">
-                        <i class="fas fa-home"></i>
-                    </span>
-                </a>
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        Papers
-                    </a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="https://sites.google.com/view/drive-any-robot">
-                            GNM: A General Navigation Model to Drive Any Robot
-                        </a>
-                        <a class="navbar-item" href="https://general-navigation-models.github.io/vint">
-                            ViNT: A Foundation Model for Visual Navigation
-                        </a>
-                        <a class="navbar-item" href="https://general-navigation-models.github.io/nomad">
-                            NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration
-                        </a>
-                    </div>
-                </div>
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More Research
-                    </a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="https://sites.google.com/view/viking-release">
-                            ViKiNG: Kilometer-Scale Navigatin with Geographic Hints
-                        </a>
-                        <a class="navbar-item" href="https://sites.google.com/view/lmnav">
-                            LM-Nav: Navigation with Pre-Trained Language and Vision Models
-                        </a>
-                        <a class="navbar-item" href="https://sites.google.com/view/fastrlap">
-                            FastRLAP: High-Speed Driving via Real-World Online RL
-                        </a>
-                        <a class="navbar-item" href="https://sites.google.com/view/sacson-review/home">
-                            SACSoN: Scalable Autonomous Control for Social Navigation
-                        </a>
-                        <a class="navbar-item" href="https://robotics-transformer-x.github.io">
-                            Open X-Embodiment: Robotic Learning Datasets and RT-X Models
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </nav> -->
-
-
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
@@ -107,6 +45,8 @@
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
                                 <a href="https://catglossop.github.io">Catherine Glossop</a>,</span>
+                            <span class="author-block">
+                                <a href="https://catglossop.github.io">William Chen</a>,</span>
                             <span class="author-block">
                                 <a href="https://scholar.google.com/citations?user=AGPooMYAAAAJ&hl=en">Arjun Bhorkar</a>,</span>
                             <span class="author-block">
@@ -144,7 +84,8 @@
                                     <a href=""
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
-                                            <i class="fas fa-database"></i> </span>
+                                            <i class="fas fa-database"></i>
+                                        </span>
                                         <span>Data</span>
                                     </a>
                                 </span>
@@ -153,7 +94,8 @@
                                     <a href=""
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
-                                            <i class="fas fa-file"></i> </span>
+                                            <i class="fas fa-file"></i> 
+                                        </span>
                                         <span>Paper</span>
                                     </a>
                                 </span>
@@ -184,488 +126,98 @@
     </section>
 
     <!-- Results Carousel -->
+
     <section class="hero is-light is-small">
+
+        <!-- Object Navigation -->
         <div class="hero-body">
+            <h2 class="title">Object Navigation</h2>
             <div class="container">
+
+                <p class="body">In object navigation tasks, the policy must recognize and move towards a target object. CAST increases the coverage of object reaching behavior in the general navigation dataset we train CounterfactualVLA on, resulting in successful object navigation.</p>
                 <div id="results-carousel" class="carousel results-carousel">
                     <div class="item item-cone">
                         <video poster="" id="cone" autoplay controls muted loop playsinline height="100%">
-                            <source src="static/videos/go_to_cone.mp4" type="video/mp4">
+                            <source src="static/videos/vfw_go_to_person_32.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="item item-stairs">
                         <video poster="" id="stairs" autoplay controls muted loop playsinline height="100%">
-                            <source src="static/videos/go_to_the_stairs.mp4" type="video/mp4">
+                            <source src="static/videos/vfw_move_to_stairs_32.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="item item-purple-cushion">
                         <video poster="" id="purple-cushion" autoplay controls muted loop playsinline height="100%">
-                            <source src="static/videos/go_to_the_purple_cushion.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="item item-through-door">
-                        <video poster="" id="through-door" autoplay controls muted loop playsinline height="100%">
-                            <source src="static/videos/go_through_door.mp4" type="video/mp4">
+                            <source src="static/videos/vfw_move_tree_left_32.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- Abstract. -->
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <h2 class="title is-3">Papers</h2>
-                    <br>
-                    <br>
-                    <!-- align text left -->
-                    <div class="content has-text-left">
-
-                        <h3 class="title is-4"><a href="https://sites.google.com/view/drive-any-robot">GNM: A General
-                                Navigation
-                                Model to Drive Any
-                                Robot</a>
-                        </h3>
-                        <div class="is-size-6 publication-venue has-text-left">
-                            <div class="is-size-6 publication-authors no-bold has-text-left">
-                                <span class="author-block">
-                                    <a href="https://cs.berkeley.edu/~shah">Dhruv Shah</a><sup>&#8224;</sup>,</span>
-                                <span class="author-block">
-                                    <a href="http://ajaysridhar.com/">Ajay Sridhar</a><sup>&#8224;</sup>,</span>
-                                <span class="author-block">
-                                    <a href="">Arjun Bhorkar</a>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://sites.google.com/view/noriaki-hirose/">Noriaki Hirose</a>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://cs.berkeley.edu/~svlevine">Sergey Levine</a>
-                                </span>
-                            </div>
-                            <span class="venue-block">International Conference on Robotics and Automation (ICRA)
-                                2023</span> <br>
-                            <span class="venue-block">London, UK</span> <br>
-                        </div>
-                        <div class="column has-text-centered">
-                            <div class="publication-links">
-                                <!-- home Link.
-                                <span class="link-block">
-                                    <a href="https://sites.google.com/view/drive-any-robot"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-house"></i>
-                                        </span>
-                                        <span>Web</span>
-                                    </a>
-                                </span> -->
-                                <!-- arxiv Link. -->
-                                <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2210.03370"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="ai ai-arxiv"></i>
-                                        </span>
-                                        <span>arXiv</span>
-                                    </a>
-                                </span>
-                                <!-- Talk Link. -->
-                                <span class="link-block">
-                                    <a href="https://www.youtube.com/watch?v=ICeD6iOglKc"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-youtube"></i>
-                                        </span>
-                                        <span>Summary</span>
-                                    </a>
-                                </span>
-                                <!-- Code Link. -->
-                                <span class="link-block">
-                                    <a href="https://github.com/robodhruv/drive-any-robot"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-github-alt"></i>
-                                        </span>
-                                        <span>Code</span>
-                                    </a>
-                                </span>
-                                <!-- Dataset Link. -->
-                                <span class="link-block">
-                                    <a href="https://github.com/robodhruv/drive-any-robot#data-wrangling"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-database"></i> </span>
-                                        <span>Data</span>
-                                    </a>
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- <ol>
-                            <li><a href="https://arxiv.org/abs/2306.14846">GNM: A General Navigation Model to Drive Any
-                                    Robot</a></li>
-                            <li><a href="https://arxiv.org/abs/2306.14846">ViNT: A Foundation Model for Visual
-                                    Navigation</a></li>
-                            <li><a href="https://arxiv.org/abs/2306.14846">NoMaD: Goal Masked Diffusion Policies for
-                                    Navigation and Exploration</a></li>
-                        </ol> -->
-                    </div>
-
-                    <br>
-                    <!-- align text left -->
-                    <div class="content has-text-left">
-
-                        <h3 class="title is-4"><a href="./vint/index.html">ViNT: A
-                                Foundation Model for Visual Navigation</a>
-                        </h3>
-                        <div class="is-size-6 publication-venue has-text-left">
-                            <div class="is-size-6 publication-authors no-bold has-text-left">
-                                <span class="author-block">
-                                    <a href="https://cs.berkeley.edu/~shah">Dhruv Shah</a><sup>&#8224;</sup>,</span>
-                                <span class="author-block">
-                                    <a href="http://ajaysridhar.com/">Ajay Sridhar</a><sup>&#8224;</sup>,</span>
-                                <span class="author-block">
-                                    <a href="https://dashora7.github.io">Nitish Dashora</a><sup>&#8224;</sup>,
-                                </span> <br>
-                                <span class="author-block">
-                                    <a href="https://kylesta.ch">Kyle Stachowicz</a>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://kevin.black">Kevin Black</a>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://sites.google.com/view/noriaki-hirose/">Noriaki Hirose</a>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://cs.berkeley.edu/~svlevine">Sergey Levine</a>
-                                </span>
-                            </div>
-                            <span class="venue-block"><span class="publication-awards">Oral Talk</span> at Conference on
-                                Robot
-                                Learning (CoRL)
-                                2023</span> <br>
-                            <span class="venue-block">Atlanta, Georgia</span> <br>
-                            <br>
-
-                            <div class="is-size-7 publication-authors">
-                                <span class="venue-block"><span class="publication-awards">Live Demo</span> at
-                                    Conference on Robot
-                                    Learning (CoRL)
-                                    2023</span> <br>
-                                <span class="venue-block"><span class="publication-awards">Live Demo</span> at Robot
-                                    Learning Workshop,
-                                    NeurIPS
-                                    2023</span> <br>
-                                <span class="venue-block"><span class="publication-awards">Oral Talk</span> at Bay Area
-                                    Machine Learning
-                                    Symposium
-                                    (BayLearn)
-                                    2023</span> <br>
-                            </div>
-                        </div>
-                        <div class="column has-text-centered">
-                            <div class="publication-links">
-                                <!-- home Link.
-                                <span class="link-block">
-                                    <a href="https://sites.google.com/view/drive-any-robot"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-house"></i>
-                                        </span>
-                                        <span>Web</span>
-                                    </a>
-                                </span> -->
-                                <!-- arxiv Link. -->
-                                <span class="link-block">
-                                    <a href="http://arxiv.org/abs/2306.14846"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="ai ai-arxiv"></i>
-                                        </span>
-                                        <span>arXiv</span>
-                                    </a>
-                                </span>
-                                <!-- Talk Link. -->
-                                <span class="link-block">
-                                    <a href="https://youtu.be/6kNex5dJ5sQ"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-youtube"></i>
-                                        </span>
-                                        <span>Summary</span>
-                                    </a>
-                                </span>
-                                <!-- Code Link. -->
-                                <span class="link-block">
-                                    <a href="https://github.com/PrieureDeSion/visualnav-transformer"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-github-alt"></i>
-                                        </span>
-                                        <span>Code</span>
-                                    </a>
-                                </span>
-                                <!-- Dataset Link. -->
-                                <span class="link-block">
-                                    <a href="https://github.com/PrieureDeSion/visualnav-transformer#data-wrangling"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-database"></i> </span>
-                                        <span>Data</span>
-                                    </a>
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- <ol>
-                            <li><a href="https://arxiv.org/abs/2306.14846">GNM: A General Navigation Model to Drive Any
-                                    Robot</a></li>
-                            <li><a href="https://arxiv.org/abs/2306.14846">ViNT: A Foundation Model for Visual
-                                    Navigation</a></li>
-                            <li><a href="https://arxiv.org/abs/2306.14846">NoMaD: Goal Masked Diffusion Policies for
-                                    Navigation and Exploration</a></li>
-                        </ol> -->
-                    </div>
-
-
-                    <br>
-                    <!-- align text left -->
-                    <div class="content has-text-left">
-
-                        <h3 class="title is-4"><a href="./nomad/index.html">NoMaD: Goal Masked Diffusion Policies for
-                                Navigation
-                                and Exploration</a>
-                        </h3>
-                        <div class="is-size-6 publication-venue has-text-left">
-                            <div class="is-size-6 publication-authors no-bold has-text-left">
-                                <span class="author-block">
-                                    <a href="http://ajaysridhar.com/">Ajay Sridhar</a>,</span>
-                                <span class="author-block">
-                                    <a href="https://cs.berkeley.edu/~shah">Dhruv Shah</a>,</span>
-                                <span class="author-block">
-                                    <a href="">Catherine Glossop</a>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://cs.berkeley.edu/~svlevine">Sergey Levine</a>
-                                </span> <br>
-                            </div>
-                            <span class="venue-block"><span class="publication-awards">Best Paper Award Winner </span> at ICRA
-                                    2024</span> <br>
-                            <span class="venue-block">Yokohama, Japan</span> <br>
-                            <br>
-                        
-                            <div class="is-size-7 publication-venue has-text-left">
-                              <span class="venue-block"><span class="publication-awards">Best Student Paper Award </span> Finalist at ICRA
-                                2024</span> <br>
-                              <span class="venue-block"><span class="publication-awards">Best Paper Award in Cognitive Robotics </span> Finalist at ICRA
-                                2024</span> <br>
-                              <span class="venue-block"><span class="publication-awards">Oral Talk </span> at NeurIPS Workshop on Foundation Models for Decision Making
-                                2023</span> <br>
-                              <span class="venue-block"><span class="publication-awards">Oral Talk </span> at CoRL Workshop on Pre-Training for Robot Learning 
-                                2023</span> <br>
-                            </div>
-                        <div class="column has-text-centered">
-                            <div class="publication-links">
-                                <!-- home Link.
-                                <span class="link-block">
-                                    <a href="https://sites.google.com/view/drive-any-robot"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-house"></i>
-                                        </span>
-                                        <span>Web</span>
-                                    </a>
-                                </span> -->
-                                <!-- arxiv Link. -->
-                                <span class="link-block">
-                                    <a href="https://arxiv.org/abs/2310.07896"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="ai ai-arxiv"></i>
-                                        </span>
-                                        <span>arXiv</span>
-                                    </a>
-                                </span>
-                                <!-- Talk Link. -->
-                                <span class="link-block">
-                                    <a href="https://www.youtube.com/watch?v=zH8LaIapF6w"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-youtube"></i>
-                                        </span>
-                                        <span>Summary</span>
-                                    </a>
-                                </span>
-                                <!-- Code Link. -->
-                                <span class="link-block">
-                                    <a href="https://github.com/robodhruv/visualnav-transformer"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-github-alt"></i>
-                                        </span>
-                                        <span>Code</span>
-                                    </a>
-                                </span>
-                                <!-- Dataset Link. -->
-                                <span class="link-block">
-                                    <a href="https://github.com/robodhruv/visualnav-transformer#data-wrangling"
-                                        class="external-link button is-small is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fas fa-database"></i> </span>
-                                        <span>Data</span>
-                                    </a>
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- <ol>
-                            <li><a href="https://arxiv.org/abs/2306.14846">GNM: A General Navigation Model to Drive Any
-                                    Robot</a></li>
-                            <li><a href="https://arxiv.org/abs/2306.14846">ViNT: A Foundation Model for Visual
-                                    Navigation</a></li>
-                            <li><a href="https://arxiv.org/abs/2306.14846">NoMaD: Goal Masked Diffusion Policies for
-                                    Navigation and Exploration</a></li>
-                        </ol> -->
-                    </div>
-                </div>
-            </div>
-            <!--/ Abstract. -->
-        </div>
-    </section>
-
-
-    <!-- People using GNM -->
-    <!-- <section class="hero is-light is-small">
+        <!-- Referential Navigation -->
         <div class="hero-body">
+            <h2 class="title">Referential Navigation</h2>
+            <p class="subtitle">In referential navigation tasks, the policy must recognize a target object or structure in the scene and understand how to move with reference to that object, specifically moving to the "right" or "left". </p>
             <div class="container">
-                <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
-                        <h2 class="title is-3">General Navigation Models <i>in-the-wild</i></h2>
-                        align text left
-                    </div>
-                </div>
-                <section class="section">
-                    <div class="container is-max-desktop">
-                        <div class="columns is-centered has-text-centered">
-                            <div class="column is-four-fifths">
-                                <div class="content has-text-justified">
-                                    <p>
-                                        GNM, ViNT, and NoMaD are available as ready-to-deploy navigation policies, and
-                                        have already been
-                                        used by researchers around the world on their own robots and environments. <br>
-                                        <br>
-                                        <b>Used GNM-family of models in your research?</b> <span
-                                            class="publication-authors">
-                                            <a href="mailto:shah@cs.berkeley.edu" class="external-link">Send
-                                                us a video of
-                                                your robot in action</a> </span>, and we'll add
-                                        it below! We love to see our models in the wild.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 <div id="results-carousel" class="carousel results-carousel">
-                    <div class="item item-tambet1">
-                        <video poster="" id="tambet1" autoplay controls muted loop playsinline height="100%">
-                            <source src="./static/videos/GNM_TambetMatiisen_Estonia_path_small.mp4" type="video/mp4">
+                    <div class="item item-cone">
+                        <video poster="" id="cone" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/vfw_left_pillar_32.mp4" type="video/mp4">
                         </video>
-                        <center>
-                            <p class="is-size-7"><b>Courtesy:</b> Tambet Matiisen, University of Tartu (Estonia)
-                            </p>
-                        </center>
                     </div>
-                    <div class="item item-lauri5">
-                        <video poster="" id="lauri5" autoplay controls muted loop playsinline height="100%">
-                            <source src="./static/videos/lauri_rtalo_IMG_3008_pr_sliding.mov_small.mp4"
-                                type="video/mp4">
+                    <div class="item item-stairs">
+                        <video poster="" id="stairs" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/vfw_right_pillar_32.mp4" type="video/mp4">
                         </video>
-                        <center>
-                            <p class="is-size-7"><b>Courtesy:</b> Lauri Suomela, Tampere University (Finland)
-                            </p>
-                        </center>
                     </div>
-                    <div class="item item-lauri2">
-                        <video poster="" id="lauri2" autoplay controls muted loop playsinline height="100%">
-                            <source src="./static/videos/lauri_nuokkari_IMG_3028_pr_topo.mov_small.mp4"
-                                type="video/mp4">
+                    <div class="item item-purple-cushion">
+                        <video poster="" id="purple-cushion" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/vfw_move_tree_left_32.mp4" type="video/mp4">
                         </video>
-                        <center>
-                            <p class="is-size-7"><b>Courtesy:</b> Lauri Suomela, Tampere University (Finland)
-                            </p>
-                        </center>
                     </div>
-                    <div class="item item-nate1">
-                        <video poster="" id="nate1" autoplay controls muted loop playsinline height="100%">
-                            <source src="./static/videos/nate_flight1_3pv.mp4" type="video/mp4">
+                    <div class="item item-purple-cushion">
+                        <video poster="" id="purple-cushion" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/vfw_follow_right_wall_32.mp4" type="video/mp4">
                         </video>
-                        <center>
-                            <p class="is-size-7"><b>Courtesy:</b> Nathaniel Simon, Princeton University (USA)
-                            </p>
-                        </center>
-                    </div>
-                    <div class="item item-lauri1">
-                        <video poster="" id="lauri1" autoplay controls muted loop playsinline height="56%">
-                            <source src="./static/videos/lauri_IMG_2869_pr_sliding.mov_small.mp4" type="video/mp4">
-                        </video>
-                        <center>
-                            <p class="is-size-7"><b>Courtesy:</b> Lauri Suomela, Tampere University (Finland)
-                            </p>
-                        </center>
-                    </div>
-                    <div class="item item-lauri3">
-                        <video poster="" id="lauri3" autoplay controls muted loop playsinline height="56%">
-                            <source src="./static/videos/lauri_IMG_2875_pr_topo.mov_small.mp4" type="video/mp4">
-                        </video>
-                        <center>
-                            <p class="is-size-7"><b>Courtesy:</b> Lauri Suomela, Tampere University (Finland)
-                            </p>
-                        </center>
-                    </div>
-                    <div class="item item-tambet2">
-                        <video poster="" id="tambet2" autoplay controls muted loop playsinline height="100%">
-                            <source src="./static/videos/GNM_TambetMatiisen_Estonia_trees_small.mp4" type="video/mp4">
-                        </video>
-                        <center>
-                            <p class="is-size-7"><b>Courtesy:</b> Tambet Matiisen, University of Tartu (Estonia)
-                            </p>
-                        </center>
-                    </div>
-                    <div class="item item-lauri4">
-                        <video poster="" id="lauri4" autoplay controls muted loop playsinline height="100%">
-                            <source src="./static/videos/lauri_paths_IMG_3081_pr_topo.mov_small.mp4" type="video/mp4">
-                        </video>
-                        <center>
-                            <p class="is-size-7"><b>Courtesy:</b> Lauri Suomela, Tampere University (Finland)
-                            </p>
-                        </center>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    
+
+        <!-- Continuous Navigation -->
+        <div class="hero-body">
+            <h2 class="title">Continuous Navigation</h2>
+            <p class="subtitle">In continuous navigation tasks, the policy must recognize a target structure and move with respect to the structure for a sustained amount of time.</p>
+            <div class="container">
+                <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item item-cone">
+                        <video poster="" id="cone" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/vfw_move_along_bushes_32.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-stairs">
+                        <video poster="" id="stairs" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/vfw_move_along_white_wall_32.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-purple-cushion">
+                        <video poster="" id="purple-cushion" autoplay controls muted loop playsinline height="100%">
+                            <source src="static/videos/vfw_follow_right_wall_32.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
             <pre><code>@article{glossop2025cast,
-                    author  = {Catherine Glossop and Arjun Bhorkar and Dhruv Shah and Sergey Levine},
+                    author  = {Catherine Glossop and William Chen and Arjun Bhorkar and Dhruv Shah and Sergey Levine},
                     title   = {{Counterfactual Labels Improve Instruction Following in Vision-Language-Action Models}},
                     journal = {arXiv pre-print},
                     year    = {2023},
